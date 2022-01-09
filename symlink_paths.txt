@@ -1,0 +1,5 @@
+Locally, keep your dot files in the dotfiles folder/repo and run the commands to create symlink shortcuts so the technologies continue to work
+
+ln -sf ~/Desktop/git/dotfiles/.zshrc ~/.zshrc
+ln -sf ~/Desktop/git/dotfiles/.bash_profile ~/.bash_profile
+ln -sf ~/Desktop/git/dotfiles/.bashrc ~/.bashrc
