@@ -1,0 +1,17 @@
+{
+  "extends": [
+      "eslint:recommended"
+  ],
+  "plugins": [
+      "@typescript-eslint",
+      "eslint-plugin-import",
+      "prettier"
+  ],
+  "rules": {
+      "import/no-default-export": "error",
+      "prefer-arrow-callback": "error",
+      "prettier/prettier": ["error", {
+        "singleQuote": true
+      }]
+  }
+}

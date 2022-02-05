@@ -1,0 +1,20 @@
+#SKHD STUFF
+
+# if you're having troubles finding key codes for a key just type skhd --observe in a terminal and type a key. Pretty cool! Or just check the wiki.
+
+## HYPER == SHIFT + CMD + ALT + OPTION
+
+# hyper - comma : hyper - 7
+## open terminal
+alt + cmd + lshift - return : /Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome
+alt + cmd + lshift - t : /Applications/kitty.app/Contents/MacOS/kitty
+
+## create a new desktop space
+alt + cmd + lshift - n : osascript /Users/nicholasmahe/CustomScripts/CreateNewDesktop.scpt
+
+## toggle app to be in its own screen
+alt + cmd + lshift - m : osascript /Users/nicholasmahe/CustomScripts/ToggleFullScreen.scpt
+
+## toggle app to take full width of screen in a desktop
+alt + cmd + lshift - f : osascript /Users/nicholasmahe/CustomScripts/ToggleMaximizeWindow.scpt
+

@@ -13,13 +13,27 @@ export ZSH="/Users/nicholasmahe/.oh-my-zsh"
 # Path for .net
 export DOTNET="/usr/local/share/dotnet/dotnet"
 
+# ---------- Aliases -----------
+
+# Files
 alias repos="cd ~/Desktop/git/"
 alias kitty_config="nvim ~/.config/kitty/kitty.conf"
 alias nvim_config="nvim ~/.config/nvim/"
 alias zsh_config="nvim ~/.zshrc"
 alias fonts_custom_list="cd ~/.local/share/fonts/"
 alias tmux_config="nvim ~/.tmux.conf"
+
+# git
 alias lg="lazygit"
+alias gs="git status"
+alias gl="git log"
+
+# docker
+alias dcb="docker-compose build"
+alias dcu="docker-compose up"
+alias dcd="docker-compose down"
+
+# ------------------------------
 # Path for yabai window tile manager
 # The order for the three items is important!
 # $HOME/.config/yabai/yabairc # < my recommendation
@@ -28,7 +42,7 @@ alias lg="lazygit"
 # $HOME/.config/skhd/skhdrc
 
 # Path for limelight, border color on focused window
-$HOME/.config/limelight/limelightrc
+# $HOME/.config/limelight/limelightrc
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,

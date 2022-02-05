@@ -1,5 +1,13 @@
 Locally, keep your dot files in the dotfiles folder/repo and run the commands to create symlink shortcuts so the technologies continue to work
+Refer to: https://medium.com/@satorusasozaki/manage-your-dotfiles-on-github-8f8a2a57c85
+
+TODO: convert this into a shell script to run
 
 ln -sf ~/Desktop/git/dotfiles/.zshrc ~/.zshrc
 ln -sf ~/Desktop/git/dotfiles/.bash_profile ~/.bash_profile
 ln -sf ~/Desktop/git/dotfiles/.bashrc ~/.bashrc
+ln -sf ~/Desktop/git/dotfiles/kitty.conf ~/.config/kitty/kitty.conf
+ln -sf ~/Desktop/git/dotfiles/karabiner.json ~/.config/karabiner/karabiner.json
+ln -sf ~/Desktop/git/dotfiles/skhdrc ~/.config/skhd/skhdrc
+ln -sf ~/Desktop/git/dotfiles/skhdrc ~/.config/skhd/skhdrc
+ln -sf ~/Desktop/git/dotfiles/fonts.conf ~/.config/fontconfig/fonts.conf
