@@ -11,3 +11,5 @@ ln -sf ~/Desktop/git/dotfiles/karabiner.json ~/.config/karabiner/karabiner.json
 ln -sf ~/Desktop/git/dotfiles/skhdrc ~/.config/skhd/skhdrc
 ln -sf ~/Desktop/git/dotfiles/skhdrc ~/.config/skhd/skhdrc
 ln -sf ~/Desktop/git/dotfiles/fonts.conf ~/.config/fontconfig/fonts.conf
+ln -sf ~/Desktop/git/dotfiles/vscode/settings.json ~/Library/Application\ Support/Code/User/settings.json
+ln -sf ~/Desktop/git/dotfiles/vscode/keybindings.json ~/Library/Application\ Support/Code/User/keybindings.json

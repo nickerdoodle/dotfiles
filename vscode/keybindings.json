@@ -1,0 +1,172 @@
+// Link for when clauses and helpful sidebar info: https://code.visualstudio.com/api/references/when-clause-contexts#activefocused-view-or-panel-when-clause-context
+// Place your key bindings in this file to override the defaults
+[
+  // https://github.com/asvetliakov/vscode-neovim/issues/74
+  {
+    "command": "vscode-neovim.compositeEscape1",
+    "key": "j",
+    "when": "neovim.mode == insert && editorTextFocus",
+    "args": "j"
+  },
+  /* {
+    "command": "vscode-neovim.escape",
+    "key": "J",
+    "when": "neovim.mode == insert && editorTextFocus",
+    "args": "J"
+  }, */
+
+  {
+    "key": "ctrl+b",
+    "command": "workbench.view.explorer",
+    "when": "!explorerViewletVisible"
+  },
+  {
+    "key": "ctrl+b",
+    "command": "-workbench.view.explorer",
+    "when": "explorerViewletVisible"
+  },
+  {
+    "key": "w",
+    "command": "list.collapseAll",
+    "when": "listFocus && !inputFocus"
+  },
+  // I probably don't need these ctrl+h mappings.
+
+  /* {
+    "key": "ctrl+h",
+    "command": "workbench.action.navigateLeft",
+    "when": "!editorTextFocus"
+  },
+  {
+    "key": "ctrl+h",
+    "command": "workbench.scm.focus",
+    // this is for source control menu. Since there is no source control viewlet to check if visible, need to go there only when the other ones are not visible
+    "when": "workbench.scm.active && !searchViewletVisible && !explorerViewletVisible"
+  }, */
+  {
+    "key": "ctrl+c",
+    "command": "toggleSearchCaseSensitive",
+    "when": "searchViewletVisible && searchViewletFocus"
+  },
+  {
+    "key": "ctrl+r",
+    "command": "toggleSearchRegex",
+    "when": "searchViewletVisible && searchViewletFocus"
+  },
+  {
+    "key": "ctrl+w",
+    "command": "toggleSearchWholeWord",
+    "when": "searchViewletVisible && searchViewletFocus"
+  },
+  {
+    "key": "ctrl+l",
+    "command": "workbench.action.navigateRight",
+    "when": "!editorTextFocus"
+  },
+  {
+    "key": "ctrl+k",
+    "command": "workbench.action.navigateUp"
+    // it's debatable if we need this condition
+    // "when": "!editorTextFocus"
+  },
+  {
+    "key": "ctrl+j",
+    "command": "workbench.action.navigateDown",
+    "when": "!editorTextFocus"
+  },
+  // SEARCH SIDEBAR
+  {
+    "key": "ctrl+j",
+    "command": "search.action.focusSearchList",
+    "when": "searchInputBoxFocus"
+  },
+  // SEARCH & REPLACE: go from search list back to search and replace inputs
+  {
+    "key": "ctrl+k",
+    "command": "workbench.action.replaceInFiles",
+    "when": "hasSearchResult && listFocus && replaceActive"
+  },
+  // TERMINAL
+  /* {
+    "key": "ctrl+j",
+    "command": "terminal.focus",
+    "when": "editorTextFocus"
+  }, */
+  {
+    "key": "ctrl+l",
+    "command": "workbench.action.terminal.focusNext",
+    "when": "terminalFocus"
+  },
+  {
+    "key": "ctrl+h",
+    "command": "workbench.action.terminal.focusNext",
+    "when": "terminalFocus"
+  },
+  {
+    "key": "ctrl+n",
+    "command": "workbench.action.terminal.new",
+    "when": "terminalFocus"
+  },
+  {
+    "key": "ctrl+d",
+    "command": "workbench.action.terminal.delete",
+    "when": "terminalFocus"
+  },
+  {
+    "key": "ctrl+k",
+    "command": "workbench.action.findInFiles",
+    "when": "hasSearchResult && listFocus && !replaceActive"
+  },
+  // which-key. Needs vscode extension installed
+
+  // add back in
+  {
+    "key": "space",
+    "command": "whichkey.show",
+    // PRO TIP: search in command palette for inspect context keys and open up the dev tools in vs code (like in chrome). When you inspect an element it will log in the console so you can find what the editor or view name is to help with conditional logic
+    "when": "neovim.mode != 'insert' && !terminalFocus && !sideBarFocus && activeEditor != workbench.editor.keybindings && !inQuickOpen && !inDebugRepl"
+  },
+  {
+    "key": "ctrl+,",
+    "command": "whichkey.show",
+    // terminalEditorFocus if you want just the terminals in editors
+    "when": "terminalFocus"
+  },
+  // insert newline in insert mode. Mimics regular vim behavior
+  {
+    "key": "ctrl+m",
+    "command": "vscode-neovim.send",
+    "args": "<NL>",
+    "when": "neovim.mode == 'insert' && editorTextFocus"
+  },
+  {
+    "key": "ctrl+space",
+    "command": "editor.action.triggerSuggest",
+    "when": "editorHasCompletionItemProvider && textInputFocus && !editorReadonly && !terminalEditorFocus"
+  },
+  {
+    "key": "ctrl+space",
+    "command": "-editor.action.triggerSuggest",
+    "when": "editorHasCompletionItemProvider && textInputFocus && !editorReadonly"
+  },
+  {
+    "key": "ctrl+space",
+    "command": "toggleSuggestionDetails",
+    "when": "suggestWidgetVisible && textInputFocus && !terminalEditorFocus"
+  },
+  {
+    "key": "ctrl+space",
+    "command": "-toggleSuggestionDetails",
+    "when": "suggestWidgetVisible && textInputFocus"
+  },
+  {
+    "key": "ctrl+.",
+    "command": "keyboard-quickfix.openQuickFix",
+    "when": "editorHasCodeActionsProvider && editorTextFocus && !editorReadonly"
+  },
+  {
+    "key": "shift+enter",
+    "command": "workbench.action.debug.stepOver",
+    "when": "debuggersAvailable && inDebugMode && editorTextFocus"
+  }
+]
