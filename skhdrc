@@ -7,7 +7,7 @@
 # hyper - comma : hyper - 7
 ## open terminal
 alt + cmd + lshift - return : /Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome
-alt + cmd + lshift - t : /Applications/kitty.app/Contents/MacOS/kitty
+# alt + cmd + lshift - t : /Applications/kitty.app/Contents/MacOS/kitty
 
 ## create a new desktop space
 alt + cmd + lshift - n : osascript /Users/nicholasmahe/CustomScripts/CreateNewDesktop.scpt
