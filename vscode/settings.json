@@ -15,9 +15,12 @@
   //linux
   "vscode-neovim.neovimExecutabePaths.linux": "/snap/bin/nvim",
   //mac
-  "vscode-neovim.neovimExecutablePaths.darwin": "/usr/local/bin/nvim",
+  // use this path if using nvim installed from homebrew
+  "vscode-neovim.neovimExecutablePaths.darwin": "/opt/homebrew/bin/nvim",
+  // use this path if using nvim installed manually and added to the usr/local/bin
+  // "vscode-neovim.neovimExecutablePaths.darwin": "/usr/local/bin/nvim",
   //linux
-  "vscode-neovim.neovimInitVimPaths.linux": "$HOME/.config/nvim/vimscript/nm-vscode/init.vim",
+  "vscode-neovim.neovimInitVimPaths.linux": "$HOME/.config/nvim/init.lua",
   //mac
   // TODO: if you remove this, it WILL use init lua... but not loading mappings/settings. not sure why
   "vscode-neovim.neovimInitVimPaths.darwin": "$HOME/.config/nvim/init.lua",
@@ -86,7 +89,9 @@
     "source.fixAll.stylelint": "explicit"
   },
   "editor.formatOnPaste": true,
-  "editor.formatOnSave": true,
+  "[csharp]": {
+    "editor.formatOnSave": true
+  },
   "files.associations": {
     "*.dockerfile.*": "dockerfile",
     "*.proto": "proto3"
@@ -668,6 +673,13 @@
           "command": "editor.action.insertSnippet"
         }
       ]
+    },
+    {
+      "key": "j",
+      "name": "Carriage return everything after cursor",
+      "type": "command",
+      "command": "vscode-neovim.send",
+      "args": "i<CR><ESC>"
     },
     {
       "key": "l",
@@ -1282,7 +1294,7 @@
   "gitlens.currentLine.pullRequests.enabled": false,
   "gitlens.currentLine.scrollable": false,
   "gitlens.codeLens.enabled": false,
-  "omnisharp.dotnetPath": "/usr/local/bin/dotnet",
+  "omnisharp.dotnetPath": "/usr/local/bin",
   "terminal.integrated.cursorBlinking": true,
   "terminal.integrated.copyOnSelection": true,
   "workbench.startupEditor": "none",
@@ -1297,14 +1309,72 @@
   "snyk.trustedFolders": [
     "/Users/nicholasmahe/Desktop/git/auth-ui",
     "/Users/nicholasmahe/Desktop/git/webappnew",
-    "/Users/nicholasmahe/Desktop/git/boards-frontend"
+    "/Users/nicholasmahe/Desktop/git/boards-frontend",
+    "/Users/nicholasmahe/Desktop/git/webappui",
+    "/Users/nicholasmahe/Desktop/git/tiered-pricing-backend"
   ],
-  "workbench.statusBar.visible": false,
   "snyk.yesWelcomeNotification": false,
   "window.zoomLevel": 1,
   "github.gitAuthentication": false,
   "git.terminalAuthentication": false,
   "workbench.activityBar.location": "top",
   "workbench.editor.editorActionsLocation": "titleBar",
-  "workbench.tips.enabled": false
+  "workbench.tips.enabled": false,
+  "dotnet.highlighting.highlightRelatedRegexComponents": false,
+  "omnisharp.enableDecompilationSupport": true,
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "github.copilot.editor.enableAutoCompletions": true,
+  "snyk.folderConfigs": [
+    {
+      "folderPath": "/Users/nicholasmahe/Desktop/git/job-field-settings-frontend",
+      "baseBranch": "main",
+      "localBranches": [
+        "kri/JN-37815-update-custom-field-model",
+        "main",
+        "nickerdoodle/3-29-cleanup-items",
+        "nickerdoodle/JN-36865-fe-setup",
+        "nickerdoodle/JN-38364-refactor",
+        "nickerdoodle/JN-40628-cleanup-items",
+        "nickerdoodle/JN-44674-hook-create-endpoint",
+        "nickerdoodle/JN-44700-side-fields-styling",
+        "nickerdoodle/JN-44701-layout-restyling",
+        "nickerdoodle/JN-44702-field-card-restyling",
+        "nickerdoodle/JN-44721-modal-styling",
+        "nickerdoodle/JN-45876-reorder-fields",
+        "nickerdoodle/add-use-dispatcher-tests",
+        "nickerdoodle/cf-factory-and-dnd",
+        "nickerdoodle/copy"
+      ]
+    }
+  ],
+  "terraform.languageServer.enable": true,
+  "editor.dragAndDrop": false,
+  "dotnet-test-explorer.enableTelemetry": false,
+  "omnisharp.dotNetCliPaths": [
+    "/usr/local/bin/dotnet"
+  ],
+  "[typescriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  // "vscode-neovim.compositeKeys": {
+
+    // "eslint.enable": true,
+    "eslint.validate": [
+      "javascript",
+      "javascriptreact",
+      "typescript",
+      "typescriptreact"
+    ],
+    "csharp.suppressBuildAssetsNotification": true,
+    "github.copilot.enable": {
+      "*": true,
+      "plaintext": false,
+      "markdown": false,
+      "scminput": false
+    },
+    "omnisharp.sdkPath": "/usr/local/share/dotnet/sdk",
+    "github.copilot.nextEditSuggestions.enabled": true
+  // }
 }

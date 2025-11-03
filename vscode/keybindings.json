@@ -2,12 +2,12 @@
 // Place your key bindings in this file to override the defaults
 [
   // https://github.com/asvetliakov/vscode-neovim/issues/74
-  {
-    "command": "vscode-neovim.compositeEscape1",
-    "key": "j",
-    "when": "neovim.mode == insert && editorTextFocus",
-    "args": "j"
-  },
+  // {
+  //   "command": "vscode-neovim.compositeEscape1",
+  //   "key": "j",
+  //   "when": "neovim.mode == insert && editorTextFocus",
+  //   "args": "j"
+  // },
   /* {
     "command": "vscode-neovim.escape",
     "key": "J",
@@ -124,7 +124,7 @@
     "key": "space",
     "command": "whichkey.show",
     // PRO TIP: search in command palette for inspect context keys and open up the dev tools in vs code (like in chrome). When you inspect an element it will log in the console so you can find what the editor or view name is to help with conditional logic
-    "when": "neovim.mode != 'insert' && !terminalFocus && !sideBarFocus && activeEditor != workbench.editor.keybindings && !inQuickOpen && !inDebugRepl"
+    "when": "!inDebugRepl && !inQuickOpen && !sideBarFocus && !terminalFocus && activeEditor != 'workbench.editor.keybindings' && neovim.mode != 'insert' && !chatInputHasFocus && !renameInputVisible"
   },
   {
     "key": "ctrl+,",
@@ -168,5 +168,9 @@
     "key": "shift+enter",
     "command": "workbench.action.debug.stepOver",
     "when": "debuggersAvailable && inDebugMode && editorTextFocus"
+  },
+  {
+    "key": "cmd+i",
+    "command": "composerMode.agent"
   }
 ]

@@ -4,13 +4,17 @@
 # bindkey -M menuselect 'k' vi-up-line-or-history
 # bindkey -M menuselect 'l' vi-forward-char# environment variables
 
+# 5/12/24 when you install brew and install other packages from brew, most of them are installed to this binary path. Therefore, adding this path. 
+# If there are tools installed via homebrew and other ways, you may need to resolve which path will be used. For example, changed neovim path to this in vscode
+export PATH=/opt/homebrew/bin:$PATH
+
 # If you come from bash you might have to change your $PATH.
 source ~/.access_token_env_vars
 
 export PATH=$HOME/bin:/usr/local/bin:/usr/local/sbin:$PATH
 # export PATH="$(yarn global bin):$PATH"
 # possibly remove (sept 6, 2021. This is to point my git to the git installed by brew instead of the one from apple)
-# export PATH="$(brew --prefix)/bin:$PATH"
+ export PATH="$(brew --prefix)/bin:$PATH"
 
 # dotnet interactive tool
 export PATH="$PATH:/Users/nicholasmahe/.dotnet/tools"
@@ -49,7 +53,11 @@ alias bob="/Users/nicholasmahe/.cargo/bin/bob"
 # ---------- Aliases -----------
 
 # Files
-alias repos="cd ~/Desktop/git/"
+
+function repos() {
+  cd "$(find ~/Desktop/git -type d -maxdepth 1 | fzf)"
+}
+alias repos_go_to="cd ~/Desktop/git"
 alias kitty_config="nvim ~/.config/kitty/kitty.conf"
 alias nvim_config="nvim ~/.config/nvim/"
 alias zsh_config="nvim ~/.zshrc"
@@ -66,6 +74,7 @@ alias gs="git status"
 alias gl="git log"
 
 # docker
+alias open_docker="open -a Docker" # mac open app
 alias dcb="docker-compose build"
 alias dcu="docker-compose up"
 alias dcd="docker-compose down"
@@ -235,3 +244,4 @@ export PATH="/usr/local/opt/protobuf@3/bin:$PATH"
 # bun
 export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
+export PATH=/Users/nicholasmahe/.local/bin:$PATH
